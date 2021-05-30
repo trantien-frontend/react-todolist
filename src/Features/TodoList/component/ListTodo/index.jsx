@@ -29,7 +29,7 @@ function ListTodo(props) {
                     })}
                     onClick={() => handleChangeStatus(todo, idx)}
                 >
-                    {todo.name}</li>
+                    {todo.title}</li>
             )}
         </ul>
     );

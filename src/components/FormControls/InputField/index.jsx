@@ -13,14 +13,25 @@ InputField.propTypes = {
 
 function InputField(props) {
     const { form, name, label, disabled } = props;
-    console.log(label);
+    const { formState: { errors } } = form;
+    const hasError = !!errors[name];
     return (
         <Controller
             name={name}
             control={form.control}
-            render={({ field }) => <TextField {...field} label={label} fullWidth disabled={disabled} />}
+
+            render={({ field }) =>
+                <TextField {...field}
+                    label={label}
+                    variant="outlined"
+                    margin="normal"
+                    fullWidth
+                    disabled={disabled}
+                    error={hasError}
+                    helperText={errors[name]?.message}
+                />}
         />
     );
-} x`
+}
 
 export default InputField;

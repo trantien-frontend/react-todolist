@@ -1,0 +1,11 @@
+.AlbumList {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+  overflow: hidden;
+  padding: 15px 0;
+  &__item {
+    overflow: hidden;
+    max-width: calc(100% / 6);
+  }
+}
